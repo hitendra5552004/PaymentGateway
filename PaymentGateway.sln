@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGatewayAPI", "Paymen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGatewayAPI.Tests", "PaymentGatewayAPI.Tests\PaymentGatewayAPI.Tests.csproj", "{8FDEF464-A3C2-4546-B86C-2488046F1837}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGatewayDomain", "PaymentGatewayDomain\PaymentGatewayDomain.csproj", "{3F49E08D-9BB8-4B08-8376-E2DC5638D942}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGatewayAntifraud.Clear", "PaymentGatewayAntifraud.Clear\PaymentGatewayAntifraud.Clear.csproj", "{4A48883E-EF85-4C0B-91DB-2047EA2D7849}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGateway.Acquirer.Cielo", "PaymentGateway.Acquirer.Cielo\PaymentGateway.Acquirer.Cielo.csproj", "{0530E083-D47D-4252-8EB2-0CBCF262A3BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{8FDEF464-A3C2-4546-B86C-2488046F1837}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FDEF464-A3C2-4546-B86C-2488046F1837}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FDEF464-A3C2-4546-B86C-2488046F1837}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F49E08D-9BB8-4B08-8376-E2DC5638D942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F49E08D-9BB8-4B08-8376-E2DC5638D942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F49E08D-9BB8-4B08-8376-E2DC5638D942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F49E08D-9BB8-4B08-8376-E2DC5638D942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A48883E-EF85-4C0B-91DB-2047EA2D7849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A48883E-EF85-4C0B-91DB-2047EA2D7849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A48883E-EF85-4C0B-91DB-2047EA2D7849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A48883E-EF85-4C0B-91DB-2047EA2D7849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0530E083-D47D-4252-8EB2-0CBCF262A3BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0530E083-D47D-4252-8EB2-0CBCF262A3BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0530E083-D47D-4252-8EB2-0CBCF262A3BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0530E083-D47D-4252-8EB2-0CBCF262A3BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DTO\Cielo\**" />
+    <EmbeddedResource Remove="DTO\Cielo\**" />
+    <None Remove="DTO\Cielo\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DTO\" />
+    <Folder Include="Lib\" />
+  </ItemGroup>
+
+</Project>
