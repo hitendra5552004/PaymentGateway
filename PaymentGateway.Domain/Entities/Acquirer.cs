@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PaymentGatewayDomain.Entities
+namespace PaymentGateway.Domain.Entities
 {
-    public class Store
+    public class Acquirer
     {
+
         public int Id { get; set; }
-        public string Name { get; set; }
+        public int Name { get; set; }
+
     }
 }

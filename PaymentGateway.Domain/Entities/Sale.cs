@@ -6,7 +6,10 @@ namespace PaymentGatewayDomain.Entities
 {
     public class Sale
     {
-        public bool AcquirerSuccess { get; set; }
-        public string AcquirerRawResponse { get; set; }
+
+        public int Id { get; set; }
+        public DateTime DateTime { get; set; }
+        public Store Store { get; set; }
+
     }
 }

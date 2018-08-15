@@ -27,10 +27,10 @@ namespace PaymentGateway.Acquirer.Stone
             Serializer = new JsonSerializer();
         }
 
-        public Sale Create(Sale sale)
+        public Sale Create(AcquirerSale sale)
         {
             // Map the model to the acquirer appropriate object.
-            CreateSaleRequest Request = Mapper.FromSaleToCreateSaleRequest(sale);
+            CreateSaleRequest Request = Mapper.FromAcquirerSaleToCreateSaleRequest(sale);
 
             // Stone API call (mock):
             CreateSaleResponse Response = Mock.CreateSaleMocked();

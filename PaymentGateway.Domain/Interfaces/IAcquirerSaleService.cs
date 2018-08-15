@@ -6,7 +6,7 @@ namespace PaymentGateway.Domain.Interfaces
     public interface IAcquirerSaleService
     {
 
-        Sale Create(Sale sale);
+        Sale Create(AcquirerSale sale);
 
     }
 }

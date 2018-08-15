@@ -15,7 +15,7 @@ namespace PaymentGateway.Acquirer.Cielo
 
         }
 
-        public Sale Create(Sale sale)
+        public Sale Create(AcquirerSale sale)
         {
             // Map the model to the acquirer appropriate object.
             // Cielo API call:

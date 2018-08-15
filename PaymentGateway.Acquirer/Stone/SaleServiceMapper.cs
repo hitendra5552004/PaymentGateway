@@ -12,13 +12,13 @@ namespace PaymentGateway.Acquirer.Stone
 {
     public class SaleServiceMapper
     {
-        public CreateSaleRequest FromSaleToCreateSaleRequest(Sale sale)
+        public CreateSaleRequest FromAcquirerSaleToCreateSaleRequest(AcquirerSale sale)
         {
             // TODO: Map objects
             return null;
         }
 
-        public Sale FromCreateSaleResponseToSale(CreateSaleResponse createSaleRequest)
+        public AcquirerSale FromCreateSaleResponseToAcquirerSale(CreateSaleResponse createSaleRequest)
         {
             // TODO: Map objects
             return null;

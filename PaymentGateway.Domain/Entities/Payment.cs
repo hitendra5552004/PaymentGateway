@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PaymentGatewayDomain.Entities
+namespace PaymentGateway.Domain.Entities
 {
-    class Payment
+    public abstract class Payment
     {
+        public int Id { get; set; }
+        public int AmountInCents { get; set; }
     }
 }

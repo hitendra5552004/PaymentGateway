@@ -4,7 +4,10 @@ using System.Text;
 
 namespace PaymentGatewayDomain.Entities
 {
-    class CreditCardBrand
+    public class CreditCardBrand
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }
