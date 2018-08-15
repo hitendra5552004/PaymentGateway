@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PaymentGatewayDomain.Entities
+namespace PaymentGateway.Acquirer.Cielo
 {
-    class Sale
+    class GatewayApiMock
     {
     }
 }

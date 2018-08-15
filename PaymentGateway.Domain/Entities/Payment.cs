@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PaymentGatewayDomain.Services
+namespace PaymentGatewayDomain.Entities
 {
-    public class SaleService
+    class Payment
     {
-
-
-
     }
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using PaymentGatewayDomain.Interfaces;
+using PaymentGateway.Domain.Interfaces;
 
 namespace PaymentGatewayDomain.Entities
 {
-    public class AcquirerStone : IAcquirer
+    public class AcquirerStone
     {
 
         public bool Authorize()

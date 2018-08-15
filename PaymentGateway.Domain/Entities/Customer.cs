@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PaymentGatewayDomain.Interfaces
+namespace PaymentGatewayDomain.Entities
 {
-    public interface ISaleService
+    public class Customer
     {
-
     }
 }
