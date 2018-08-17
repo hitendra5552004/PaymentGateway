@@ -3,11 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PaymentGatewayDomain.Entities
+namespace PaymentGateway.Domain.Entities
 {
-    public class CreditCardPayment : Payment
+    public class CreditCardPayment
     {
-
+        public int Id { get; set; }
+        public int AmountInCents { get; set; }
         public CreditCard CreditCard { get; set; }
         public Acquirer Acquirer { get; set; }
 

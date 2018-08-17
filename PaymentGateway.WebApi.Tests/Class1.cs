@@ -3,7 +3,7 @@ using Xunit;
 using Moq;
 //using System.Web.Http;
 using System.Net.Http;
-using PaymentGatewayAPI.Controllers;
+using PaymentGateway.WebApi.Controllers;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 

@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PaymentGatewayDomain.Entities
+namespace PaymentGateway.Domain.Entities
 {
     public class Sale
     {
-
         public int Id { get; set; }
-        public DateTime DateTime { get; set; }
-        public Store Store { get; set; }
-
+        public int StoreId { get; set; }
+        public int AmmountInCents { get; set; }
+        public string CreditCardNumber { get; set; }
     }
 }

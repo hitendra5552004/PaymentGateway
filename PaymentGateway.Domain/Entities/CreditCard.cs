@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PaymentGatewayDomain.Entities
+namespace PaymentGateway.Domain.Entities
 {
     public class CreditCard
     {
+        public int Id { get; set; }
         public string CreditCardNumber { get; set; }
+        //public int IdCreditCardBrand { get; set; }
         public CreditCardBrand CreditCardBrand { get; set; }
         public int ExpMonth { get; set; }
         public int ExpYear { get; set; }
