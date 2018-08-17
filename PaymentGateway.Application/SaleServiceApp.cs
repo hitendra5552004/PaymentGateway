@@ -33,10 +33,10 @@ namespace PaymentGateway.Application
             CreditCard CreditCard = CreditCardService.Search(c => c.CreditCardNumber == sale.CreditCardNumber, nameof(CreditCard.CreditCardBrand)).First();
             StoreAcquirer StoreAcquirer = StoreAcquirerService.Search(c => c.IdCreditCardBrand == CreditCard.Id && c.IdStore == sale.StoreId, nameof(StoreAcquirer.Acquirer), nameof(StoreAcquirer.Store)).First();
             
-            // Verificar se aquirer usa autorizacao
+            // Verificar se acquirer usa autorizacao
             if (StoreAcquirer.Store.AntifraudEnabled)
             {
-                // Antifraud
+                // TODO: Antifraud
             }
 
             // Instancia o client configurado
@@ -56,10 +56,9 @@ namespace PaymentGateway.Application
                 }
             };
 
-            // Call Acquirer
             AcquirerClientSaleService.Create(ref AcquirerSale);
 
-            // persite
+            // Registra resultado da operação
             AcquirerSaleService.Add(AcquirerSale);
             
         }

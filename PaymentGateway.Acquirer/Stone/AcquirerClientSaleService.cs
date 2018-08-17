@@ -6,6 +6,7 @@ using PaymentGateway.AcquirerClient;
 using PaymentGateway.Domain.Entities;
 using PaymentGateway.Domain.Interfaces.AntiCorruption;
 using PaymentGateway.Domain.AntiCorruption;
+
 using Infrastructure.CrossCuting.Serialization;
 using GatewayApiClient.DataContracts;
 using GatewayApiClient;
@@ -17,18 +18,21 @@ namespace PaymentGateway.AcquirerClient.Stone
 {
     public class AcquirerClientSaleService : AcquirerClientService, IAcquirerClientSaleService
     {
-
+        
         public void Create(ref AcquirerSale acquirerSale)
         {
+            // Arrange post
             CreateSaleRequest RequestObject = new CreateSaleRequest();
             
-            // Call external endpoint
+            // Call endpoint
             NameValueCollection headers = new NameValueCollection();
             headers.Add("MerchantKey", acquirerSale.Store.MerchantKey);
+            headers.Add("Content-Type", "application/json");
+
             HttpResponse<CreateSaleResponse> Response = this.HttpUtility.SubmitRequest<CreateSaleRequest, CreateSaleResponse>(RequestObject,
             acquirerSale.Acquirer.ServiceUri, HttpVerbEnum.Post, HttpContentTypeEnum.Json, headers);
 
-            // Set AcquirerSale with the external api returned data
+            // Arrange return
             if (Response.HttpStatusCode == HttpStatusCode.Created)
             {
                 acquirerSale.AcquirerSuccess = true;

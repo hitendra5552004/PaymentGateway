@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PaymentGateway.AcquirerClient.Cielo.DTO
 {
-    public class CreateSaleResponse
+    public class CreateSaleContract
     {
         public string MerchantOrderId { get; set; }
         public Customer Customer { get; set; }
