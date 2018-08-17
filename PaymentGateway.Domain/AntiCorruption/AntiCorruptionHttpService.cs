@@ -9,7 +9,8 @@ namespace PaymentGateway.Domain.AntiCorruption
     {
         public IHttpUtility HttpUtility { get; set; }
 
-        public ACLHttpClientService() : this(new HttpUtility()) { }
+        //public ACLHttpClientService() : this(new HttpUtility()) { }
+        public ACLHttpClientService() : this(new HttpUtilityMock()) { }
 
         public ACLHttpClientService(IHttpUtility httpUtility)
         {

@@ -16,10 +16,13 @@ using PaymentGateway.Infrastructure.Data;
 using PaymentGateway.Application.Interfaces;
 using PaymentGateway.Application;
 using PaymentGateway.Domain.Interfaces.Services;
+using PaymentGateway.Domain.Interfaces.AntiCorruption;
+using PaymentGateway.AntifraudClient.Clear;
 using PaymentGateway.Domain.Interfaces.Repositories;
 using PaymentGateway.Infrastructure.Data.Repositories;
 using PaymentGateway.Domain.Services;
 using Infrastructure.CrossCuting.HttpClient;
+using PaymentGateway.AcquirerClient.Null;
 
 namespace PaymentGateway.WebApi
 {
@@ -48,6 +51,8 @@ namespace PaymentGateway.WebApi
             services.AddTransient<IStoreAcquirerService, StoreAcquirerService>();
             services.AddTransient<IAcquirerSaleService, AcquirerSaleService>();
             services.AddTransient<IAcquirerSaleService, AcquirerSaleService>();
+            services.AddTransient<IAntifraudClientService, AntifraudClientService>();
+            services.AddTransient<IAcquirerClientSaleService, AcquirerClientSaleService>();
 
             services.AddTransient<IRepositoryAcquirer, RepositoryAcquirer>();
             services.AddTransient<IRepositoryCreditCard, RepositoryCreditCard>();

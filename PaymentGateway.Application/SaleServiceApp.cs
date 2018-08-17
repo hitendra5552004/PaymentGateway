@@ -12,35 +12,35 @@ namespace PaymentGateway.Application
     public class SaleServiceApp : ISaleServiceApp
     {
         
-        IAcquirerService AcquirerService;
         IAcquirerSaleService AcquirerSaleService;
         ICreditCardService CreditCardService;
         IStoreService StoreService;
         IStoreAcquirerService StoreAcquirerService;
+        IAntifraudClientService AntifraudClientService;
+        IAcquirerClientSaleService AcquirerClientSaleService;
 
-        public SaleServiceApp(IAcquirerService acquirerService, ICreditCardService creditCardService, IStoreService storeService, IStoreAcquirerService storeAcquirerService, IAcquirerSaleService acquirerSaleService)
+        public SaleServiceApp(ICreditCardService creditCardService, IStoreService storeService, IStoreAcquirerService storeAcquirerService, IAcquirerSaleService acquirerSaleService, IAntifraudClientService antifraudClientService, IAcquirerClientSaleService acquirerClientSaleService)
         {
-            AcquirerService = acquirerService;
             CreditCardService = creditCardService;
             StoreService = storeService;
             StoreAcquirerService = storeAcquirerService;
             AcquirerSaleService = acquirerSaleService;
+            AntifraudClientService = antifraudClientService;
+            AcquirerClientSaleService = acquirerClientSaleService;
         }
 
         public void CreateSale(Sale sale)
         {
 
             CreditCard CreditCard = CreditCardService.Search(c => c.CreditCardNumber == sale.CreditCardNumber, nameof(CreditCard.CreditCardBrand)).First();
-            StoreAcquirer StoreAcquirer = StoreAcquirerService.Search(c => c.IdCreditCardBrand == CreditCard.Id && c.IdStore == sale.StoreId, nameof(StoreAcquirer.Acquirer), nameof(StoreAcquirer.Store)).First();
+            Store Store = StoreService.Search(c => c.Id == sale.StoreId, nameof(Store.Antifraud)).First();
+            StoreAcquirer StoreAcquirer = StoreAcquirerService.Search(c => c.IdCreditCardBrand == CreditCard.Id && c.IdStore == Store.Id, nameof(StoreAcquirer.Acquirer)).First();
             
-            // Verificar se acquirer usa autorizacao
-            if (StoreAcquirer.Store.AntifraudEnabled)
-            {
-                // TODO: Antifraud
-            }
-
             // Instancia o client configurado
-            IAcquirerClientSaleService AcquirerClientSaleService = AcquirerClientSaleServiceFactory.CreateInstance(StoreAcquirer.Acquirer.Assembly);
+            if(AcquirerClientSaleService.GetType() == typeof(AcquirerClient.Null.AcquirerClientSaleService))
+            {
+                AcquirerClientSaleService = AcquirerClientSaleServiceFactory.CreateInstance(StoreAcquirer.Acquirer.Assembly);
+            }
             
             AcquirerSale AcquirerSale = new AcquirerSale()
             {
@@ -55,6 +55,15 @@ namespace PaymentGateway.Application
                     }
                 }
             };
+
+            // Verificar se acquirer usa autorizacao
+            if (StoreAcquirer.Store.AntifraudEnabled)
+            {
+                // Antifraud
+                AntifraudClientService.Execute(ref AcquirerSale);
+
+                if (!AcquirerSale.Authorized) return;
+            }
 
             AcquirerClientSaleService.Create(ref AcquirerSale);
 

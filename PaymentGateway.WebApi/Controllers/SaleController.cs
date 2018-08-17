@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using PaymentGateway.Application.Interfaces;
 using PaymentGateway.WebApi.Models.DTO;
 using PaymentGateway.Domain.Entities;
+using PaymentGateway.Domain.Interfaces.Services;
 
 namespace PaymentGateway.WebApi.Controllers
 {
@@ -16,17 +17,20 @@ namespace PaymentGateway.WebApi.Controllers
     {
 
         private readonly ISaleServiceApp SaleServiceApp;
+        private readonly IAcquirerSaleService AcquirerSaleService;
 
-        public SaleController(ISaleServiceApp saleServiceApp)
+        public SaleController(ISaleServiceApp saleServiceApp, IAcquirerSaleService acquirerSaleService)
         {
             SaleServiceApp = saleServiceApp;
+            AcquirerSaleService = acquirerSaleService;
         }
 
         // GET: api/Sale
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<AcquirerSale> Get()
         {
-            return new string[] { "value1", "value2" };
+            var Sales = AcquirerSaleService.GetAll();
+            return Sales;
         }
 
         // GET: api/Sale/5

@@ -14,9 +14,15 @@ namespace PaymentGateway.Infrastructure.Data
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
+            var antifraud = new Antifraud()
+            {
+                Name = "Clear",
+                ServiceUri = "https://integration.clearsale.com.br/api/order/get"
+            };
+
             var stores = new List<Store>() {
 
-                new Store { Name = "000", AntifraudEnabled = true, MerchantKey = "123456789"},
+                new Store { Name = "000", AntifraudEnabled = true, MerchantKey = "123456789", Antifraud = antifraud},
                 new Store { Name = "001", AntifraudEnabled = false, MerchantKey = "123456789"}
             };
 
