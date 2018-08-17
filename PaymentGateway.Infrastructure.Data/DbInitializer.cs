@@ -28,8 +28,8 @@ namespace PaymentGateway.Infrastructure.Data
 
             var acquirers = new List<Acquirer>() {
 
-                new Acquirer { Name = "Stone", Assembly = "PaymentGateway.AcquirerClient.Stone.AcquirerClientSaleService" }  ,
-                new Acquirer { Name = "Cielo", Assembly = "PaymentGateway.AcquirerClient.Cielo.AcquirerClientSaleService" }
+                new Acquirer { Name = "Stone", Assembly = "PaymentGateway.AcquirerClient.Stone.AcquirerClientSaleService", ServiceUri = "https://transaction.stone.com.br/Sale" }  ,
+                new Acquirer { Name = "Cielo", Assembly = "PaymentGateway.AcquirerClient.Cielo.AcquirerClientSaleService", ServiceUri = "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/" }
             };
 
             var storeAcquirers = new List<StoreAcquirer>() {

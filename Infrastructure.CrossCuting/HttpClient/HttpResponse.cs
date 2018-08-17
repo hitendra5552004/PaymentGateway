@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Infrastructure.CrossCuting.HttpClient
-{
-    /// <summary>
-    /// Represents a http response.
-    /// </summary>
+{/// <summary>
+ /// Represents a http response.
+ /// </summary>
     public class HttpResponse
     {
 

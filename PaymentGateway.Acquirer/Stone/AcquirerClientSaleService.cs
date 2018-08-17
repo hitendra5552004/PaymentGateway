@@ -11,6 +11,7 @@ using GatewayApiClient.DataContracts;
 using GatewayApiClient;
 using Infrastructure.CrossCuting.HttpClient;
 using System.Net;
+using System.Collections.Specialized;
 
 namespace PaymentGateway.AcquirerClient.Stone
 {
@@ -19,16 +20,25 @@ namespace PaymentGateway.AcquirerClient.Stone
 
         public void Create(ref AcquirerSale acquirerSale)
         {
-            IHttpUtility HttpUtility = base.HttpUtility;
+            CreateSaleRequest RequestObject = new CreateSaleRequest();
+            
+            // Call external endpoint
+            NameValueCollection headers = new NameValueCollection();
+            headers.Add("MerchantKey", acquirerSale.Store.MerchantKey);
+            HttpResponse<CreateSaleResponse> Response = this.HttpUtility.SubmitRequest<CreateSaleRequest, CreateSaleResponse>(RequestObject,
+            acquirerSale.Acquirer.ServiceUri, HttpVerbEnum.Post, HttpContentTypeEnum.Json, headers);
 
-            // TODO: Map object to DTO
-
-            // TODO: Pass to endpoint
-
-            // TODO: Map DTO to object
-
-
-            throw new NotImplementedException();
+            // Set AcquirerSale with the external api returned data
+            if (Response.HttpStatusCode == HttpStatusCode.Created)
+            {
+                acquirerSale.AcquirerSuccess = true;
+                acquirerSale.AcquirerRawResponse = Response.RawResponse;
+                acquirerSale.StatusCode = Response.HttpStatusCode.ToString();
+            }
+            else
+            {
+                acquirerSale.AcquirerSuccess = false;
+            }
         }
 
     }

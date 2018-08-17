@@ -10,6 +10,7 @@ namespace PaymentGateway.Domain.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string Assembly { get; set; }
+        public string ServiceUri { get; set; }
         public virtual List<StoreAcquirer> StoreAcquirer { get; set; }
 
     }
