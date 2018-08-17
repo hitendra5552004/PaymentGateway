@@ -1,10 +1,7 @@
 
-## Description
+## Descrição
 
-E-commerce gateway that can process payments from multiple retailers, each retailer may have a contract with more than one buyer, and may still have a contract with anti-fraud systems.
-
-## Instructions
-
+Gateway especializado em e-commerce que poderá processar pagamentos de vários lojistas, cada lojista poderá ter contrato com mais de um adquirente e ainda poderá ter ou não contrato com sistemas antifraudes. 
 A aplicação foi desenvolvida utilizando as seguintes tecnologias: C#, .NET CORE 2, MySql.
 
 #### Build e Deploy
