@@ -11,7 +11,7 @@ using System.Net;
 
 namespace PaymentGateway.AcquirerClient.Cielo
 {
-    public class AcquirerClientSaleService : AcquirerClientService, IAcquirerClientSaleService
+    public class AcquirerClientSaleService : ACLHttpClientService, IAcquirerClientSaleService
     {
         
         public void Create(ref AcquirerSale acquirerSale)

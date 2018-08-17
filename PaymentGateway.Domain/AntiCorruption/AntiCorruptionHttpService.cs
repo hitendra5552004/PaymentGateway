@@ -5,19 +5,15 @@ using Infrastructure.CrossCuting.HttpClient;
 
 namespace PaymentGateway.Domain.AntiCorruption
 {
-
-    public abstract class AcquirerClientService
+    public abstract class ACLHttpClientService
     {
-
         public IHttpUtility HttpUtility { get; set; }
 
-        public AcquirerClientService(): this(new HttpUtility()) {}
+        public ACLHttpClientService() : this(new HttpUtility()) { }
 
-        public AcquirerClientService(IHttpUtility httpUtility)
+        public ACLHttpClientService(IHttpUtility httpUtility)
         {
             HttpUtility = httpUtility;
         }
-
     }
-
 }

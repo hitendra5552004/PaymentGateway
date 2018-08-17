@@ -14,11 +14,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PaymentGateway.Acquirer\PaymentGateway.AcquirerClient.csproj" />
+    <ProjectReference Include="..\PaymentGateway.Antifraud\PaymentGateway.AntifraudClient.csproj" />
     <ProjectReference Include="..\PaymentGateway.Domain\PaymentGateway.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="AntifraudClient\" />
   </ItemGroup>
 
 </Project>

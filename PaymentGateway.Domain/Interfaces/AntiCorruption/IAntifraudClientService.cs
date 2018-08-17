@@ -3,10 +3,10 @@ using PaymentGateway.Domain.Entities;
 
 namespace PaymentGateway.Domain.Interfaces.AntiCorruption
 {
-    public interface IAcquirerClientSaleService
+    public interface IAntifraudClientService
     {
 
-        void Create(ref AcquirerSale acquirerSale);
+        void Execute(ref AcquirerSale acquirerSale);
 
     }
 }

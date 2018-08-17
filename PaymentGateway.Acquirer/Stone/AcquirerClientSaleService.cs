@@ -16,7 +16,7 @@ using System.Collections.Specialized;
 
 namespace PaymentGateway.AcquirerClient.Stone
 {
-    public class AcquirerClientSaleService : AcquirerClientService, IAcquirerClientSaleService
+    public class AcquirerClientSaleService : ACLHttpClientService, IAcquirerClientSaleService
     {
         
         public void Create(ref AcquirerSale acquirerSale)

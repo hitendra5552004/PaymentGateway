@@ -12,7 +12,10 @@ namespace PaymentGateway.Domain.Entities
         public DateTime DateTime { get; set; }
         public Store Store { get; set; }
         public bool AcquirerSuccess { get; set; }
+        public bool Authorized { get; set; }
         public string AcquirerRawResponse { get; set; }
+        public string AuthorizationRawResponse { get; set; }
+        public string AuthStatusCode { get; set; }
         public virtual List<CreditCardPayment> CreditCardPayments { get; set; }
         public string StatusCode { get; set; }
     }

@@ -14,7 +14,7 @@ using System.Net;
 
 namespace PaymentGateway.AcquirerClient.Null
 {
-    public class AcquirerClientSaleService : AcquirerClientService, IAcquirerClientSaleService
+    public class AcquirerClientSaleService : ACLHttpClientService, IAcquirerClientSaleService
     {
 
         public void Create(ref AcquirerSale acquirerSale)

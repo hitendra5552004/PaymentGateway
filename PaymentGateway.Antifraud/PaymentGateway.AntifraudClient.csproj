@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Clear\" />
+    <ProjectReference Include="..\Infrastructure.CrossCuting\Infrastructure.CrossCuting.csproj" />
+    <ProjectReference Include="..\PaymentGateway.Domain\PaymentGateway.Domain.csproj" />
   </ItemGroup>
 
 </Project>

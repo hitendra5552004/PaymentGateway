@@ -10,7 +10,7 @@ using PaymentGateway.ACL.Tests;
 
 namespace PaymentGateway.ACL.Tests.AcquirerClient
 {
-    public class CieloAcquirerClientSaleService
+    public class CieloAcquirerClientSaleServiceTests
     {
         [Fact]
         public void DoSuccessCreditCardSale()
