@@ -1,8 +1,5 @@
 
-## Descrição
-
-Gateway especializado em e-commerce que poderá processar pagamentos de vários lojistas, cada lojista poderá ter contrato com mais de um adquirente e ainda poderá ter ou não contrato com sistemas antifraudes. 
-A aplicação foi desenvolvida utilizando as seguintes tecnologias: C#, .NET CORE 2, MySql.
+A study project. Web API that manages a payment gateway with different providers. Technologies used: .NET Core 2 Web API, .NET Core MVC, Entity Framework Core, Repository pattern for MySql, unit tests using MSTest for the different layers, DDD cross-cutting and anti corruption layers.
 
 #### Build e Deploy
 
